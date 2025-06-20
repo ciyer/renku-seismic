@@ -1,3 +1,4 @@
+import geopandas as gpd
 import numpy as np
 import pandas as pd
 import matplotlib as mpl
@@ -34,4 +35,24 @@ def read_southern_path(file_path):
     """
     df = read_raw_southern_path(file_path)
     # TODO: rename columns
-    return df
+    tdf = df.rename(
+        columns={"LAT": "latitude", "LON": "longitude", "DEPTH": "depth", "MAG": "mag"}
+    )
+    return tdf
+
+
+def to_gdf(df, crs="EPSG:4326"):
+    """
+    Convert a DataFrame with latitude and longitude to a GeoDataFrame.
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame with 'latitude' and 'longitude' columns.
+    crs : str, optional
+        Coordinate reference system (CRS) to use for the GeoDataFrame.
+        Default is "EPSG:4326" (WGS 84).
+    """
+    gdf = gpd.GeoDataFrame(
+        df, geometry=gpd.points_from_xy(df.longitude, df.latitude), crs=crs
+    )
+    return gdf
