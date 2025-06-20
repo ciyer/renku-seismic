@@ -8,12 +8,20 @@ A project for plaing with public data sets on on AWS:
 
 # Data Connectors
 
-When creating data connectors, it is not necessary to mount the full datasets, which are large. You can just mount the `earthquate_catalog` folders.
+When creating data connectors, it is not necessary to mount the full datasets, which are large. You can just mount the `earthquake_catalog` folders.
 
-* Name: Northern California Earthquake Data
-* Source path: ncedc-pds/earthquake_catalogs/NCEDC/
-* Mount point: ncedc
+Data connector 1: Northern California Earthquake Data
 
-* Name: Southern California Earthquake Data
-* Source path: scedc-pds/earthquake_catalogs/SCEC_DC/
-* Mount point: scedc
+| Field        | Value                                         |
+|--------------|-----------------------------------------------|
+| Source path  | `ncedc-pds/earthquake_catalogs/NCEDC/`        |
+| Name         | Northern California Earthquake Data           |
+| Mount point  | `ncedc`                                       |
+
+Data connector 2: Southern California Earthquake Data
+
+| Field        | Value                                         |
+|--------------|-----------------------------------------------|
+| Source path  | `scedc-pds/earthquake_catalogs/SCEC_DC/`      |
+| Name         | Southern California Earthquake Data           |
+| Mount point  | `scedc`                                       |

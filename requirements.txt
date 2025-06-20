@@ -2,6 +2,8 @@ beautifulsoup4==4.*
 geojson==3.*
 geopandas==1.*
 geodatasets==2024.8.*
+ipykernel==6.*
+ipython==8.*
 matplotlib==3.10.*
 missingno==0.5.*
 numpy==2.*

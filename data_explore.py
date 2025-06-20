@@ -22,15 +22,13 @@ sc_df.head()
 
 # %%
 nc_gdf = seismic_reader.to_gdf(nc_df)
-
-# %%
 world = gpd.read_file(get_path("naturalearth.land"))
 ax = world.plot(color="white", edgecolor="black")
 nc_gdf.plot(ax=ax, color="red", alpha=0.1)
+None
 
 # %%
 sc_gdf = seismic_reader.to_gdf(sc_df)
-
-# %%
 ax = world.plot(color="white", edgecolor="black")
 sc_gdf.plot(ax=ax, color="red", alpha=0.1)
+None
